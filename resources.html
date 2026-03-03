@@ -3,151 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dynamics Resources | Praneet Velaga Consulting LLC</title>
-  <meta name="description" content="Dynamics 365 resource library: templates and patterns for plugins, integrations (SAP), ALM/DevOps, automation, portals, and analytics." />
+  <title>Dynamics Resources | PV Consulting</title>
+  <meta name="description" content="Resources" />
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true"></div>
-        <div>Praneet Velaga Consulting LLC</div>
-      </a>
+      <a class="brand" href="index.html"><div class="logo" aria-hidden="true"></div><div>PV Consulting</div></a>
       <nav class="navlinks">
         <a href="services.html">Services</a>
         <a href="resources.html">Dynamics Resources</a>
-        <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="contact.html">Book a call →</a>
+      <a class="cta" href="https://calendly.com/your-calendly-link" target="_blank" rel="noopener">Book a call →</a>
     </div>
   </header>
-
   <main class="wrap">
-    
-<section style="padding:26px 0 10px;">
+    <section style="padding:28px 0 10px;">
   <div class="kicker">Dynamics Resources</div>
   <h1>Resource hub for Dynamics 365 builders.</h1>
-  <p class="sub">Templates, patterns, and playbooks you can use in real projects. (You can replace “Open” links with your GitHub docs later.)</p>
-
   <div class="controls">
-    <input id="q" type="search" placeholder="Search resources (e.g., plugin, SAP, ALM)..." style="min-width:260px; flex:1;" />
-    <select id="cat" aria-label="Category">
-      <option value="">All categories</option>
-    </select>
-    <select id="lvl" aria-label="Level">
-      <option value="">All levels</option>
-    </select>
-    <input id="tag" type="search" placeholder="Filter by tag (e.g., Service Bus)..." style="min-width:220px;" />
-    <button class="btn" id="clear" type="button">Clear</button>
+    <input id="q" type="search" placeholder="Search resources..." style="min-width:260px; flex:1;" />
     <span id="count" class="small" style="color:var(--muted)"></span>
   </div>
-
   <div id="resources" style="display:grid; gap:14px; margin-top:12px;"></div>
-  <div id="toast" class="small" style="position:fixed; right:18px; bottom:18px; opacity:0; transition:opacity .2s;
-      padding:10px 12px; border-radius:14px; border:1px solid var(--border); background:rgba(16,26,47,.9); box-shadow:var(--shadow); color:var(--text);">
-  </div>
 </section>
-
-    <footer>
-      <div class="small">© <span id="year"></span> Praneet Velaga Consulting LLC. All rights reserved.</div>
-    </footer>
+    <footer><div class="small">© <span id="year"></span> PV Consulting. All rights reserved.</div></footer>
   </main>
-
   <script src="assets/site.js"></script>
-  <script id="resources-json" type="application/json">[{"title": "Dynamics 365 Plugin Template (C#)", "category": "Development", "level": "Intermediate", "desc": "Skeleton plugin with tracing, validation, and service context helpers. Use for create/update/delete pipelines.", "link": "#", "tags": ["C#", "Plugin", "Tracing", "Validation"]}, {"title": "Custom API Pattern for Dataverse", "category": "Development", "level": "Advanced", "desc": "Expose business logic via Custom APIs + Azure Functions for secure, reusable operations.", "link": "#", "tags": ["Custom API", "Dataverse", "Azure Functions", "Security"]}, {"title": "Integration Pattern: D365 \u2194 SAP via Logic Apps", "category": "Integrations", "level": "Advanced", "desc": "Event-driven integration using Service Bus + Logic Apps + Functions with retries and DLQ handling.", "link": "#", "tags": ["SAP", "Logic Apps", "Service Bus", "Retries"]}, {"title": "Power Automate: Approval + SLA Escalations", "category": "Automation", "level": "Intermediate", "desc": "Reusable flow pattern for approvals, reminders, and SLA escalations with audit logging.", "link": "#", "tags": ["Power Automate", "Approvals", "SLA", "Auditing"]}, {"title": "Power Pages Starter Checklist", "category": "Portals", "level": "Beginner", "desc": "Secure portal setup checklist: identity, roles, table permissions, performance and SEO basics.", "link": "#", "tags": ["Power Pages", "Security", "Table Permissions", "SEO"]}, {"title": "ALM for Dynamics 365 + Power Platform", "category": "DevOps", "level": "Advanced", "desc": "Solution layering, environment variables, pipelines, and deployment gates for DEV/QA/UAT/PROD.", "link": "#", "tags": ["ALM", "Azure DevOps", "Solutions", "Pipelines"]}, {"title": "Data Migration: SSIS / ADF to Dataverse", "category": "Data", "level": "Intermediate", "desc": "Incremental loads, lookups, upserts, and error handling for large migrations into Dataverse.", "link": "#", "tags": ["SSIS", "Azure Data Factory", "Dataverse", "Upsert"]}, {"title": "Power BI + D365 Dashboard Blueprint", "category": "Analytics", "level": "Intermediate", "desc": "Model, refresh strategy, security (RLS), and KPI design for sales/service leadership dashboards.", "link": "#", "tags": ["Power BI", "RLS", "Dashboards", "KPI"]}]</script>
-  <script>
-const RESOURCES = JSON.parse(document.getElementById('resources-json').textContent);
-
+  <script id="resources-json" type="application/json">[{"title": "Dynamics 365 Plugin Template (C#)", "category": "Development", "level": "Intermediate", "desc": "Production-ready plugin skeleton: tracing, depth guard, validation helpers, and common patterns.", "link": "#", "tags": ["C#", "Plugin", "Tracing", "Validation"]}, {"title": "Integration Pattern: D365 \u2194 SAP via Logic Apps", "category": "Integrations", "level": "Advanced", "desc": "Event-driven integration using Service Bus + Logic Apps/Functions with retries + DLQ handling.", "link": "#", "tags": ["SAP", "Logic Apps", "Service Bus", "Retries"]}]</script><script>const RESOURCES = JSON.parse(document.getElementById('resources-json').textContent);
+function escapeHtml(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");}
 function render(list){
-  const host = document.getElementById('resources');
-  host.innerHTML = '';
-  if(!list.length){
-    host.innerHTML = `<div class="card"><strong>No results.</strong><div class="resource-meta">Try clearing filters.</div></div>`;
-    return;
-  }
+  const host=document.getElementById('resources'); host.innerHTML='';
+  if(!list.length){host.innerHTML=`<div class="card"><strong>No results.</strong><div class="resource-meta">Try clearing filters.</div></div>`; return;}
   for(const r of list){
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = `
-      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
-        <div>
-          <h3 style="margin:0 0 6px;">${escapeHtml(r.title)}</h3>
-          <div class="resource-meta">${escapeHtml(r.category)} • ${escapeHtml(r.level)}</div>
-        </div>
-      </div>
-      <p style="margin:12px 0 0; color:var(--muted)">${escapeHtml(r.desc)}</p>
-      <div>
-        ${r.tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}
-      </div>
-      <div class="resource-actions">
-        <a class="btn" href="${r.link}" target="_blank" rel="noopener">Open</a>
-        <button class="btn" type="button" onclick="copyTitle('${encodeURIComponent(r.title)}')">Copy title</button>
-      </div>
-    `;
+    const el=document.createElement('div'); el.className='card';
+    el.innerHTML=`<h3 style="margin:0 0 6px;">${escapeHtml(r.title)}</h3>
+    <div class="resource-meta">${escapeHtml(r.category)} • ${escapeHtml(r.level)}</div>
+    <p style="margin:12px 0 0; color:var(--muted)">${escapeHtml(r.desc)}</p>
+    <div>${(r.tags||[]).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`;
     host.appendChild(el);
   }
 }
-
-function escapeHtml(s){
-  return String(s)
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-
-function copyTitle(encoded){
-  const t = decodeURIComponent(encoded);
-  navigator.clipboard?.writeText(t);
-  const toast = document.getElementById('toast');
-  toast.textContent = `Copied: ${t}`;
-  toast.style.opacity = '1';
-  setTimeout(()=>toast.style.opacity='0', 1400);
-}
-
 function applyFilters(){
-  const q = (document.getElementById('q').value||'').trim().toLowerCase();
-  const cat = document.getElementById('cat').value;
-  const lvl = document.getElementById('lvl').value;
-  const tag = (document.getElementById('tag').value||'').trim().toLowerCase();
-
-  const filtered = RESOURCES.filter(r=>{
-    const hay = (r.title+' '+r.desc+' '+r.category+' '+r.level+' '+(r.tags||[]).join(' ')).toLowerCase();
-    if(q && !hay.includes(q)) return false;
-    if(cat && r.category !== cat) return false;
-    if(lvl && r.level !== lvl) return false;
-    if(tag && !(r.tags||[]).some(t=>t.toLowerCase().includes(tag))) return false;
-    return true;
-  });
+  const q=(document.getElementById('q').value||'').trim().toLowerCase();
+  const filtered=RESOURCES.filter(r=> (r.title+' '+r.desc).toLowerCase().includes(q));
   render(filtered);
   document.getElementById('count').textContent = `${filtered.length} resources`;
 }
-
-function populate(){
-  const cats = Array.from(new Set(RESOURCES.map(r=>r.category))).sort();
-  const lvls = Array.from(new Set(RESOURCES.map(r=>r.level))).sort();
-  const catSel = document.getElementById('cat');
-  const lvlSel = document.getElementById('lvl');
-  for(const c of cats){ const o=document.createElement('option'); o.value=c; o.textContent=c; catSel.appendChild(o); }
-  for(const l of lvls){ const o=document.createElement('option'); o.value=l; o.textContent=l; lvlSel.appendChild(o); }
-
-  ['q','cat','lvl','tag'].forEach(id=>document.getElementById(id).addEventListener('input', applyFilters));
-  document.getElementById('clear').addEventListener('click', ()=>{
-    document.getElementById('q').value='';
-    document.getElementById('cat').value='';
-    document.getElementById('lvl').value='';
-    document.getElementById('tag').value='';
-    applyFilters();
-  });
-  applyFilters();
-}
-
-populate();
-</script>
+document.getElementById('q').addEventListener('input', applyFilters);
+applyFilters();</script>
 </body>
 </html>

@@ -3,100 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Praneet Velaga Consulting LLC</title>
-  <meta name="description" content="Contact Praneet Velaga Consulting LLC for Dynamics 365, Power Platform, and Azure integration consulting." />
+  <title>Contact | PV Consulting</title>
+  <meta name="description" content="Contact" />
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true"></div>
-        <div>Praneet Velaga Consulting LLC</div>
-      </a>
+      <a class="brand" href="index.html"><div class="logo" aria-hidden="true"></div><div>PV Consulting</div></a>
       <nav class="navlinks">
         <a href="services.html">Services</a>
         <a href="resources.html">Dynamics Resources</a>
-        <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="contact.html">Book a call →</a>
+      <a class="cta" href="https://calendly.com/your-calendly-link" target="_blank" rel="noopener">Book a call →</a>
     </div>
   </header>
-
   <main class="wrap">
-    
-<section style="padding:26px 0 10px;">
+    <section style="padding:28px 0 10px;">
   <div class="kicker">Contact</div>
-  <h1>Let’s talk about your Dynamics project.</h1>
-  <p class="sub">Send a quick note — this form opens your email app (no backend needed).</p>
-
-  <div class="grid2">
-    <div class="card">
-      <h2 style="margin:0 0 8px;">Direct</h2>
-      <p class="small" style="color:var(--muted); margin-top:6px;">
-        Email: <a href="mailto:Praneet9394@gmail.com">Praneet9394@gmail.com</a><br/>
-        Phone: <a href="tel:+17203098385">720-309-8385</a>
-      </p>
-      <hr class="sep"/>
-      <div class="small" style="color:var(--muted)">
-        Add your LinkedIn URL here once ready.
-      </div>
-    </div>
-
-    <div class="card">
-      <h2 style="margin:0 0 10px;">Quick inquiry</h2>
-      <form onsubmit="return mailtoSubmit(event)">
-        <label class="small" style="color:var(--muted)" for="name">Name</label>
-        <input id="name" name="name" placeholder="Your name" required />
-
-        <div style="height:10px"></div>
-
-        <label class="small" style="color:var(--muted)" for="company">Company</label>
-        <input id="company" name="company" placeholder="Company name" />
-
-        <div style="height:10px"></div>
-
-        <label class="small" style="color:var(--muted)" for="message">What do you need help with?</label>
-        <textarea id="message" name="message" placeholder="Example: D365 Field Service enhancements + SAP integration for invoices..." required></textarea>
-
-        <div style="height:12px"></div>
-
-        <button class="btn" type="submit">Send Email →</button>
-      </form>
-      <p class="small" style="color:var(--muted); margin:10px 0 0;">No data is stored on this site.</p>
+  <h1>Let’s talk.</h1>
+  <div class="card">
+    <p class="sub">Book time on Calendly or email directly.</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="cta" href="https://calendly.com/your-calendly-link" target="_blank" rel="noopener">Open Calendly →</a>
+      <a class="btn" href="mailto:Praneet9394@gmail.com">Email</a>
     </div>
   </div>
 </section>
-
-<script>
-function mailtoSubmit(e){
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const company = document.getElementById("company").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  const subject = encodeURIComponent("Inquiry - Praneet Velaga Consulting LLC");
-  const body = encodeURIComponent(
-    `Name: ${name}
-Company: ${company}
-
-Project Details:
-${message}
-`
-  );
-  window.location.href = `mailto:Praneet9394@gmail.com?subject=${subject}&body=${body}`;
-  return false;
-}
-</script>
-
-    <footer>
-      <div class="small">© <span id="year"></span> Praneet Velaga Consulting LLC. All rights reserved.</div>
-    </footer>
+    <footer><div class="small">© <span id="year"></span> PV Consulting. All rights reserved.</div></footer>
   </main>
-
   <script src="assets/site.js"></script>
   
 </body>
